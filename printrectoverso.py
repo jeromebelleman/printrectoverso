@@ -12,7 +12,7 @@ def printrectoverso(_, files):
     '''
 
     subprocess.call(['pdfjoin'] + \
-                    [fle.get_uri()[7:] for fle in files] + \
+                    [fle.get_location().get_path() for fle in files] + \
                     ['-o', '/tmp/printrectoverso.pdf'])
     subprocess.Popen(['evince', '/tmp/printrectoverso.pdf'])
 
